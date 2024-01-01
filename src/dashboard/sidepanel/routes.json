@@ -2,7 +2,7 @@
     {
       "name": "Home",
       "icon": "home",
-      "link": "/",
+      "link": "/dashboard",
       "children": [
         {
           "name": "Subpage 1",
@@ -24,9 +24,9 @@
       ]
     },
     {
-      "name": "About",
+      "name": "Properties",
       "icon": "info",
-      "link": "/about"
+      "link": "/dashboard/properties"
     },
     {
       "name": "About",

@@ -1,25 +1,21 @@
 import React from "react";
-import App from "./App.tsx";
-import "./globals.css";
-import { ThemeProvider } from "@/components/darktheme/theme-provider";
-
 import { createRoot } from "react-dom/client";
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Route,
-  Link,
-} from "react-router-dom";
+import { createBrowserRouter, Route, Routes, RouterProvider } from "react-router-dom";
+import { ThemeProvider } from "@/components/darktheme/theme-provider";
 import Dashboard from "@/dashboard/index.tsx";
+import Properties from "@/dashboard/properties/index.tsx";
+import Layout from "@/dashboard/Layout.tsx";
+import App from "./App.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
-  },
-  {
-    path: "dashboard",
-    element: <Dashboard />,
+    element: <Layout />, // Layout is set as the root layout
+    children: [
+      { index: true, element: <App /> }, // App component is nested within the Layout
+      { path: "dashboard", element: <Dashboard /> },
+      { path: "dashboard/properties", element: <Properties /> },
+    ],
   },
 ]);
 
