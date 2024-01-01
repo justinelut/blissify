@@ -1,11 +1,12 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import { createBrowserRouter, Route, Routes, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ThemeProvider } from "@/components/darktheme/theme-provider";
 import Dashboard from "@/dashboard/index.tsx";
 import Properties from "@/dashboard/properties/index.tsx";
 import Layout from "@/dashboard/Layout.tsx";
 import App from "./App.tsx";
+import '@/globals.css'
 
 const router = createBrowserRouter([
   {
