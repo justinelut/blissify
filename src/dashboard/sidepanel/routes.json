@@ -1,0 +1,66 @@
+[
+    {
+      "name": "Home",
+      "icon": "home",
+      "link": "/",
+      "children": [
+        {
+          "name": "Subpage 1",
+          "icon": "subpage1",
+          "link": "/blog"
+        },
+        {
+          "name": "Subpage 2",
+          "icon": "subpage2",
+          "link": "/create",
+          "children": [
+            {
+              "name": "Subpage 2.1",
+              "icon": "subpage2.1",
+              "link": "/blog"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "About",
+      "icon": "info",
+      "link": "/about"
+    },
+    {
+      "name": "About",
+      "icon": "info",
+      "link": "/about"
+    },
+    {
+      "name": "About",
+      "icon": "info",
+      "link": "/about",
+      "children": [
+        {
+          "name": "Subpage 1",
+          "icon": "subpage1",
+          "link": "/about/subpage1"
+        },
+        {
+          "name": "Subpage 2",
+          "icon": "subpage2",
+          "link": "/about/subpage2",
+          "children": [
+            {
+              "name": "Subpage 2.1",
+              "icon": "subpage2.1",
+              "link": "/about/subpage2/subpage2.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "About",
+      "icon": "info",
+      "link": "/about"
+    }
+  ]
+  
