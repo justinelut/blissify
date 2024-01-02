@@ -5,17 +5,15 @@ import { ThemeProvider } from "@/components/darktheme/theme-provider";
 import Dashboard from "@/dashboard/index.tsx";
 import Properties from "@/dashboard/properties/index.tsx";
 import Layout from "@/dashboard/Layout.tsx";
-import App from "./App.tsx";
-import '@/globals.css'
+import "@/globals.css";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/dashboard",
     element: <Layout />, // Layout is set as the root layout
     children: [
-      { index: true, element: <App /> }, // App component is nested within the Layout
-      { path: "dashboard", element: <Dashboard /> },
-      { path: "dashboard/properties", element: <Properties /> },
+      { index: true, element: <Dashboard /> }, // App component is nested within the Layout
+      { path: "/dashboard/properties", element: <Properties /> },
     ],
   },
 ]);
