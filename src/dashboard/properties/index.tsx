@@ -7,8 +7,7 @@ export default function Properties() {
       <div className="sticky top-0 dark:bg-slate-950">
         <DesktopNav>
           <div className="flex flex-row gap-6">
-            <div>Publish</div>
-            <div>Push Settings</div>
+            <div className="font-extrabold text-3xl">Properties</div>
           </div>
         </DesktopNav>
       </div>

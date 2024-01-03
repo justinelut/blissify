@@ -1,5 +1,5 @@
-import * as React from "react";
-import { Minus, Plus, Layers, XSquare, X } from "lucide-react";
+
+import {  Layers, X } from "lucide-react";
 import { ModeToggle } from "@/components/darktheme/ModeToggle";
 
 import { Button } from "@/components/ui/button";
@@ -7,19 +7,17 @@ import {
   Drawer,
   DrawerClose,
   DrawerContent,
-  DrawerDescription,
+ 
   DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
+
+
   DrawerTrigger,
 } from "@/components/ui/drawer";
 
 export function MobileNav() {
-  const [goal, setGoal] = React.useState(350);
+  
 
-  function onClick(adjustment: number) {
-    setGoal(Math.max(200, Math.min(400, goal + adjustment)));
-  }
+  
 
   return (
     <Drawer>

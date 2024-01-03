@@ -37,7 +37,7 @@ const RecursiveRouteRenderer: React.FC = () => {
     return routes.map((route, index) => (
       <div key={index}>
         <div>
-          <div className="flex flex-row justify-start items-center gap-4 text-lg mt-6">
+          <div className="flex flex-row justify-start items-center gap-2 text-lg mt-2 hover:text-blue-500">
             <Home size={18} strokeWidth={1.3} />
             <Link to={`${route.link}`}>{route.name}</Link>
           </div>
@@ -46,7 +46,7 @@ const RecursiveRouteRenderer: React.FC = () => {
         {route.children &&
           Array.isArray(route.children) &&
           route.children.length > 0 && (
-            <div style={{ marginLeft: "20px" }}>
+            <div className="ml-6">
               {renderRoutes(route.children)}
             </div>
           )}
