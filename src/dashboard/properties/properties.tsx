@@ -11,8 +11,8 @@ import {
   Card,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 import { Editor } from "@/dashboard/editor";
+import { Pencil } from "lucide-react";
 
 export default function ListedProperties() {
   return (
@@ -52,7 +52,7 @@ export default function ListedProperties() {
               Favorite
             </Button>
             
-            <Editor />
+            <Editor text="Edit" buttonclass=""  Icon={<Pencil size={16} className="mr-2" />} />
           </CardFooter>
         </div>
       </div>
