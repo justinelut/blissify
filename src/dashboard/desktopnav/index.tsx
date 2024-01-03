@@ -5,7 +5,7 @@ interface DesktopNavProps {
 }
 
 const DesktopNav: React.FC<DesktopNavProps> = ({ children }) => {
-  return <div className='w-full flex flex-row items-center py-8 bg-white dark:bg-slate-950'>{children}</div>;
+  return <div className='w-full py-8 bg-white dark:bg-slate-950'>{children}</div>;
 };
 
 export default DesktopNav;
