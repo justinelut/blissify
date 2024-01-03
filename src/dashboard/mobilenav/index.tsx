@@ -3,7 +3,7 @@ import { MobileNav } from "@/dashboard/mobilenav/navigation";
 
 export default function MobileMenu() {
   return (
-    <div className="grid grid-cols-4 place-items-center">
+    <div className="grid grid-cols-4 place-items-center ">
       
       <div className="flex flex-col justify-center items-center">
         <Layers size={16} />

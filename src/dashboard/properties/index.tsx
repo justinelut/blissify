@@ -1,17 +1,21 @@
-import { Building } from "@/dashboard/properties/building";
+import Listing from "@/dashboard/properties/listing";
+import DesktopNav from "@/dashboard/desktopnav";
 
 export default function Properties() {
   return (
     <>
-      <div className="pb-4 mb-4 border-b border-gray-200 w-full  flex flex-row justify-between">
-        <h2>Properties</h2>
-
-        <div className="flex flex-row gap-6">
-          <div>Publish</div>
-          <div>Push Settings</div>
-        </div>
+      <div className="sticky top-0 dark:bg-slate-950">
+        <DesktopNav>
+          <div className="flex flex-row gap-6">
+            <div>Publish</div>
+            <div>Push Settings</div>
+          </div>
+        </DesktopNav>
       </div>
-      <Building />
+
+     
+        <Listing />
+     
     </>
   );
 }

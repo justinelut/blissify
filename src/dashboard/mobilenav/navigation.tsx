@@ -31,28 +31,28 @@ export function MobileNav() {
       <DrawerContent>
         <div className="mx-auto w-full max-w-sm px-4 border-b border-gray-300 pb-2">
           <div className="flex flex-col">
-            <div className="flex flex-row justify-between p-2 border border-gray-200 rounded-lg py-10 px-4 bg-slate-400 mt-4">
+            <div className="flex flex-row justify-between p-2 border rounded-lg py-10 px-4 bg-red-500 mt-4">
               <div className="flex-1">item 1</div>
               <div className="flex-1">item 1</div>
               <div className="flex-1">item 1</div>
             </div>
-            <div className="flex flex-row justify-between p-2 border border-gray-200 rounded-lg py-10 px-4 bg-slate-400 mt-4">
+            <div className="flex flex-row justify-between p-2 border rounded-lg py-10 px-4 bg-green-400 mt-4">
               <div className="flex-1">item 1</div>
               <div className="flex-1">item 1</div>
               <div className="flex-1">item 1</div>
             </div>
-            <div className="flex flex-row justify-between p-2 border border-gray-200 rounded-lg py-10 px-4 bg-slate-400 mt-4">
+            <div className="flex flex-row justify-between p-2 border rounded-lg py-10 px-4 bg-blue-400 mt-4">
               <div className="flex-1">item 1</div>
               <div className="flex-1">item 1</div>
               <div className="flex-1">item 1</div>
             </div>
-            <div className="flex flex-row justify-between p-2 border border-gray-200 rounded-lg py-10 px-4 bg-slate-400 mt-4">
+            <div className="flex flex-row justify-between p-2 border rounded-lg py-10 px-4 bg-slate-400 mt-4">
               <div className="flex-1">item 1</div>
               <div className="flex-1">item 1</div>
               <div className="flex-1">item 1</div>
             </div>
 
-            <div className="flex flex-row justify-between p-2 border border-gray-200 rounded-lg py-2 mt-4">
+            <div className="flex flex-row justify-between p-2 border rounded-lg py-2 mt-4">
               <DrawerFooter>
                 <DrawerClose asChild>
                   <ModeToggle />
