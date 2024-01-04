@@ -20,10 +20,16 @@ import { Textarea } from "@/components/ui/textarea";
 import { RadioGroupItem, RadioGroup } from "@/components/ui/radio-group";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import BlockEditor from "@/dashboard/blockeditor/blockeditor";
 
 export default function BuildingForm() {
   const [isChecked, setIsChecked] = useState(true);
   const [isSelected, setIsSelected] = useState(false);
+
+  
+
+
+  const [data, setData] = useState();
 
   const handleCardClick = () => {
     setIsChecked(!isChecked);
@@ -110,11 +116,8 @@ export default function BuildingForm() {
           </div>
           <div className="space-y-2">
             <Label htmlFor="description">Property Description</Label>
-            <Textarea
-              className="min-h-[100px]"
-              id="description"
-              placeholder="Enter property description"
-            />
+            <BlockEditor data={data} onChange={(data)=>console.log(data)} editorblock="editorjs" />
+            
           </div>
           <div className="space-y-2">
             <Label>Pets Allowed</Label>

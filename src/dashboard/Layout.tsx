@@ -1,7 +1,8 @@
 // Importing all created components
 import SidePanel from "@/dashboard/sidepanel/sidepanel";
-import { Outlet } from "react-router-dom";
+import { Outlet } from "@tanstack/react-router";
 import MobileMenu from "@/dashboard/mobilenav/";
+
 
 const Layout: React.FC = () => {
   return (

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Route from "@/dashboard/sidepanel/routes.json"; // Assuming you have a types file for your routes
 import { Home } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link } from "@tanstack/react-router";
 
 interface Route {
   name: string;

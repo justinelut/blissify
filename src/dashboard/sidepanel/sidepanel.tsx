@@ -1,7 +1,7 @@
 import { ModeToggle } from "@/components/darktheme/ModeToggle";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Settings } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link } from "@tanstack/react-router";
 import { ProfileToggle } from "@/dashboard/sidepanel/ProfileToggle";
 import SideMenu from "./SideMenu";
 export default function SidePanel() {
@@ -27,7 +27,7 @@ export default function SidePanel() {
         </div>
 
         <div className="flex flex-row justify-between items-center gap-4">
-          <Link to="/dashboard/settings">
+          <Link to="/dashboard/settings" >
             {" "}
             <Settings />
           </Link>
