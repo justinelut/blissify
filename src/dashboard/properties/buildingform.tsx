@@ -26,9 +26,6 @@ export default function BuildingForm() {
   const [isChecked, setIsChecked] = useState(true);
   const [isSelected, setIsSelected] = useState(false);
 
-  
-
-
   const [data, setData] = useState();
 
   const handleCardClick = () => {
@@ -37,6 +34,7 @@ export default function BuildingForm() {
   };
 
   const handleCardChange = () => {
+    console.log(isSelected)
     setIsSelected(!isSelected);
   };
 
@@ -116,8 +114,11 @@ export default function BuildingForm() {
           </div>
           <div className="space-y-2">
             <Label htmlFor="description">Property Description</Label>
-            <BlockEditor data={data} onChange={(data)=>console.log(data)} editorblock="editorjs" />
-            
+            <BlockEditor
+              data={data}
+              onChange={(data) => console.log(data)}
+              editorblock="editorjs"
+            />
           </div>
           <div className="space-y-2">
             <Label>Pets Allowed</Label>
@@ -125,19 +126,21 @@ export default function BuildingForm() {
               className="flex justify-between items-center gap-2"
               defaultValue="no"
               id="pets"
+              onValueChange={handleCardChange}
             >
               <label
                 className={`border rounded-lg p-4 cursor-pointer flex-1 ${
-                  isSelected ? "bg-slate-800 text-white" : "bg-gray-200"
+                  isSelected
+                    ? "border-2 border-slate-800 text-green-500"
+                    : "bg-gray-200"
                 }`}
+
+                
               >
-                <div className="flex items-center">
-                  <input
-                    type="radio"
-                    name="radioGroup" // Ensure that all radio buttons in the same group have the same name
-                    checked={isSelected}
-                    onChange={handleCardChange}
-                    className="mr-4 w-10 h-10"
+                <div className="flex flex-row">
+                  <RadioGroupItem
+                    value="pets-allowed"
+                    className="mr-2 w-6 h-6 text-green-500"
                   />
 
                   <div>
@@ -149,16 +152,15 @@ export default function BuildingForm() {
               </label>
               <label
                 className={`border rounded-lg p-4 cursor-pointer flex-1 ${
-                  isSelected ? "bg-slate-800 text-white" : "bg-gray-200"
+                  isSelected ? "border-2 border-slate-800 text-green-500" : "bg-gray-200"
                 }`}
+
+               
               >
                 <div className="flex items-center">
-                  <input
-                    type="radio"
-                    name="radioGroup" // Ensure that all radio buttons in the same group have the same name
-                    checked={isSelected}
-                    onChange={handleCardChange}
-                    className="mr-4 w-10 h-10 bg-slate-800"
+                  <RadioGroupItem
+                    value="pets-not-allowed"
+                    className="mr-2 w-6 h-6 text-green-500"
                   />
 
                   <div>
@@ -173,7 +175,7 @@ export default function BuildingForm() {
           <div className="space-y-2">
             <Label>Security Features</Label>
             <div className="flex flex-col gap-2">
-            <label
+              <label
                 className={`border rounded-lg p-4 cursor-pointer ${
                   isChecked ? "bg-slate-800 text-white" : "bg-slate-200"
                 }`}
