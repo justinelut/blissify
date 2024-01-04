@@ -17,6 +17,7 @@ import {
   RootRoute,
 } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/router-devtools";
+import Signup from "@/dashboard/auth/signup";
 
 
 const rootRoute = new RootRoute({
@@ -40,7 +41,13 @@ const aboutRoute = new Route({
   component: Dashboard,
 });
 
-const routeTree = rootRoute.addChildren([indexRoute, aboutRoute]);
+const authRoute = new Route({
+  getParentRoute: () => rootRoute,
+  path: "/accounts/auth",
+  component: Signup,
+});
+
+const routeTree = rootRoute.addChildren([indexRoute, aboutRoute, authRoute]);
 
 const router = new Router({ routeTree });
 
