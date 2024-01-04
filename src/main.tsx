@@ -15,6 +15,7 @@ import {
   Router,
   Route,
   RootRoute,
+  Outlet,
 } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 import Signup from "@/dashboard/auth/signup";
@@ -23,31 +24,45 @@ import Signup from "@/dashboard/auth/signup";
 const rootRoute = new RootRoute({
   component: () => (
     <>
-      <Layout />
+       <Outlet />
       <TanStackRouterDevtools />
     </>
   ),
 });
 
-const indexRoute = new Route({
+
+
+
+//all routes to that are under dashboard
+
+const dashboardRoute = new Route({
   getParentRoute: () => rootRoute,
-  path: "/dashboard/properties",
+  path: "dashboard",
+  component: () => (
+    <>
+       <Layout />
+    </>
+  ),
+});
+
+const propertiesRoute = new Route({
+  getParentRoute: () => dashboardRoute,
+  path: "properties",
   component: Properties,
 });
 
-const aboutRoute = new Route({
-  getParentRoute: () => rootRoute,
-  path: "/dashboard",
-  component: Dashboard,
-});
 
 const authRoute = new Route({
   getParentRoute: () => rootRoute,
-  path: "/accounts/auth",
+  path: "/accounts/auth/signup",
   component: Signup,
 });
 
-const routeTree = rootRoute.addChildren([indexRoute, aboutRoute, authRoute]);
+const dashboard = dashboardRoute.addChildren([propertiesRoute]) 
+
+
+
+const routeTree = rootRoute.addChildren([dashboard, authRoute]);
 
 const router = new Router({ routeTree });
 
