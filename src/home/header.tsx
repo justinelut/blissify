@@ -1,66 +1,102 @@
-import {Link} from "@tanstack/react-router"
-import { AvatarImage, AvatarFallback, Avatar } from "@/components/ui/avatar"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
-import { Switch } from "@/components/ui/switch"
-import { Label } from "@/components/ui/label"
+import { Link } from "@tanstack/react-router";
+import { AvatarImage, AvatarFallback, Avatar } from "@/components/ui/avatar";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
+import { Separator } from "@/components/ui/separator";
+import { CarouselMulti } from "@/components/customui/corouselmulti";
+import { Search } from "lucide-react";
 
-export default function Component() {
+export default function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
-    <div className="bg-white">
-      <header className="flex items-center justify-between p-4">
-        <div className="flex items-center space-x-4">
-          <HotelIcon className="text-red-500 h-8 w-8" />
-          <nav className="hidden space-x-4 md:flex">
-            <Link className="text-gray-500 hover:text-gray-700" to="/">
-              Stays
-            </Link>
-            <Link className="text-gray-500 hover:text-gray-700" to="/">
-              Experiences
-            </Link>
-            <Link className="text-gray-500 hover:text-gray-700" to="/">
-              Online Experiences
-            </Link>
-          </nav>
-        </div>
-        <div className="flex items-center space-x-4">
-          <Link className="text-gray-500 hover:text-gray-700" to="/">
-            Airbnb your home
-          </Link>
-          <GlobeIcon className="text-gray-500 h-6 w-6" />
-          <div className="flex items-center space-x-1 border p-2 rounded-full">
-            <MenuIcon className="text-gray-500 h-5 w-5" />
-            <Avatar>
-              <AvatarImage alt="User avatar" src="/placeholder.svg?height=32&width=32" />
-              <AvatarFallback>U</AvatarFallback>
-            </Avatar>
+    <>
+      <div
+        className={`${
+          isScrolled
+            ? "bg-white text-white shadow-lg flex flex-col  justify-between p-4 py-6 px-4 sm:px-4 lg:px-6"
+            : "bg-white text-black flex flex-col  justify-between p-4 max-w-7xl mx-auto py-4 px-6 sm:px-4 lg:px-6"
+        } transition-all duration-300 ease-in-out fixed top-0 left-0 right-0 z-50 p-4`}
+      >
+        <header
+          className={`${
+            isScrolled
+              ? " flex flex-row items-center justify-between p-4 py-6 px-4 sm:px-4 lg:px-6"
+              : " flex items-center justify-between p-4 max-w-7xl mx-auto py-4 px-6 sm:px-4 lg:px-6"
+          } transition-all duration-300 ease-in-out fixed top-0 left-0 right-0 z-50 p-4`}
+        >
+          <div className="flex items-center space-x-4 ">
+            <HotelIcon className="text-red-500 h-8 w-8" />
+            <nav className="hidden space-x-4 md:flex">
+              <Link className="text-gray-500 hover:text-gray-700" to="/">
+                Stays
+              </Link>
+              <Link className="text-gray-500 hover:text-gray-700" to="/">
+                Experiences
+              </Link>
+              <Link className="text-gray-500 hover:text-gray-700" to="/">
+                Online Experiences
+              </Link>
+            </nav>
           </div>
-        </div>
-      </header>
-      <div className="flex flex-col items-center px-4 py-2">
-        <div className="flex w-full max-w-3xl items-center space-x-2 rounded-full bg-gray-100 p-3">
-          <Input className="flex-grow bg-transparent mr-2" placeholder="Search destinations" type="text" />
-          <Button className="bg-red-500 text-white">Search</Button>
-        </div>
-        <div className="flex w-full max-w-3xl justify-between py-4">
-          <Input className="flex-grow" placeholder="Where" />
-          <Input className="flex-grow" placeholder="Check in" />
-          <Input className="flex-grow" placeholder="Check out" />
-          <Input className="flex-grow" placeholder="Who" />
-        </div>
-        <div className="flex w-full max-w-3xl overflow-x-auto py-2">
-          <div className="flex space-x-4" />
-        </div>
-        <div className="flex w-full max-w-3xl justify-end space-x-2 py-2">
-          <Button variant="outline">Filters</Button>
-          <div className="flex items-center space-x-2">
-            <Switch id="total-before-taxes" />
-            <Label htmlFor="total-before-taxes">Display total before taxes</Label>
+
+          <div className="flex items-center space-x-4">
+            <Link className="text-gray-500 hover:text-gray-700" to="/">
+              Airbnb your home
+            </Link>
+            <GlobeIcon className="text-gray-500 h-6 w-6" />
+            <div className="flex items-center space-x-1 border p-2 rounded-full">
+              <MenuIcon className="text-gray-500 h-5 w-5" />
+              <Avatar>
+                <AvatarImage
+                  alt="User avatar"
+                  src="/placeholder.svg?height=32&width=32"
+                />
+                <AvatarFallback>U</AvatarFallback>
+              </Avatar>
+            </div>
           </div>
+        </header>
+
+        <div className="flex flex-row justify-between">
+
+          
+          
+        
         </div>
+
+
+        <div className="flex flex-row justify-between">
+         <div className="flex w-full flex-2 items-center rounded-full mt-20">
+          <CarouselMulti />
+          </div>
+          <div className="flex w-full items-center rounded-full mt-20">
+            <Input
+              className="flex-grow bg-transparent rounded-full -mr-12 border-0 focus-visible:ring-transparent focus-visible:rounded-full bg-gray-200"
+              placeholder="Search destinations"
+              type="text"
+            />
+            <button className="bg-red-500 text-white rounded-full p-2"><Search/></button>
+          </div>
+        
+        </div>
+
+        
       </div>
-    </div>
-  )
+    </>
+  );
 }
 
 function GlobeIcon(props) {
@@ -81,9 +117,8 @@ function GlobeIcon(props) {
       <line x1="2" x2="22" y1="12" y2="12" />
       <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
     </svg>
-  )
+  );
 }
-
 
 function HotelIcon(props) {
   return (
@@ -109,9 +144,8 @@ function HotelIcon(props) {
       <path d="M8 11h.01" />
       <path d="M10 22v-6.5m4 0V22" />
     </svg>
-  )
+  );
 }
-
 
 function MenuIcon(props) {
   return (
@@ -131,5 +165,5 @@ function MenuIcon(props) {
       <line x1="4" x2="20" y1="6" y2="6" />
       <line x1="4" x2="20" y1="18" y2="18" />
     </svg>
-  )
+  );
 }

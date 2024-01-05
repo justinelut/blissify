@@ -20,6 +20,7 @@ import {
 import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 import Signup from "@/dashboard/auth/signup";
 import Home from "@/home";
+import HomeLayout from "@/home/homelayout";
 
 
 const rootRoute = new RootRoute({
@@ -38,12 +39,21 @@ const rootRoute = new RootRoute({
 const homeRoute = new Route({
   getParentRoute: () => rootRoute,
   path: "/",
+  component: () => (
+    <>
+       <HomeLayout />
+    </>
+  ),
+});
+const homeIndexRoute = new Route({
+  getParentRoute: () => homeRoute,
+  path: "/cv",
   component: Home,
 });
 
 const authRoute = new Route({
-  getParentRoute: () => rootRoute,
-  path: "/accounts/auth/signup",
+  getParentRoute: () => homeRoute,
+  path: "accounts/auth/signup",
   component: Signup,
 });
 
@@ -72,10 +82,8 @@ const propertiesRoute = new Route({
 
 
 const dashboard = dashboardRoute.addChildren([propertiesRoute]) 
-
-
-
-const routeTree = rootRoute.addChildren([dashboard, authRoute, homeRoute]);
+const home = homeRoute.addChildren([authRoute, homeIndexRoute]) 
+const routeTree = rootRoute.addChildren([dashboard, home]);
 
 const router = new Router({ routeTree });
 
