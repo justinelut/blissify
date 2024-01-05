@@ -7,7 +7,7 @@ import PropertyCard from "@/home/propertycard";
 export default function Featured() {
   return (
     <div className="bg-white">
-      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+      <div className="py-40 md:py-12 lg:py-12 px-4 sm:px-6 md:px-32 lg:px-36">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-gradient-to-r from-red-200 to-red-100 flex flex-col lg:flex-row col-span-2 p-8 rounded-lg">
             <div className="flex-1 flex flex-col space-y-4 ">

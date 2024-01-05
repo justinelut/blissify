@@ -26,16 +26,16 @@ export default function Header() {
       <div
         className={`${
           isScrolled
-            ? "bg-white text-white shadow-lg flex flex-col  justify-between p-4 py-6 px-4 sm:px-4 lg:px-6"
-            : "bg-white text-black flex flex-col  justify-between p-4 max-w-7xl mx-auto py-4 px-6 sm:px-4 lg:px-6"
-        } transition-all duration-300 ease-in-out fixed top-0 left-0 right-0 z-50 p-4`}
+            ? "bg-white text-black shadow-lg flex flex-col  justify-between p-4 py-6 px-4 sm:px-4 lg:px-6"
+            : "bg-white text-black flex flex-col  justify-between p-4"
+        } transition-all duration-300 ease-in-out fixed top-0 left-0 right-0 z-50 p-4  py-4 px-6 sm:px-32 lg:px-36`}
       >
         <header
           className={`${
             isScrolled
               ? " flex flex-row items-center justify-between p-4 py-6 px-4 sm:px-4 lg:px-6"
-              : " flex items-center justify-between p-4 max-w-7xl mx-auto py-4 px-6 sm:px-4 lg:px-6"
-          } transition-all duration-300 ease-in-out fixed top-0 left-0 right-0 z-50 p-4`}
+              : " flex items-center justify-between p-4"
+          } transition-all duration-300 ease-in-out fixed top-0 left-0 right-0 z-50 p-4 py-4 px-6 sm:px-4 lg:px-36`}
         >
           <div className="flex items-center space-x-4 ">
             <HotelIcon className="text-red-500 h-8 w-8" />
@@ -70,30 +70,22 @@ export default function Header() {
           </div>
         </header>
 
-        <div className="flex flex-row justify-between">
 
-          
-          
-        
-        </div>
-
-
-        <div className="flex flex-row justify-between">
-         <div className="flex w-full flex-2 items-center rounded-full mt-20">
-          <CarouselMulti />
+        <div className="flex flex-col md:flex-row lg:flex-row justify-between">
+          <div className="flex w-full flex-2 items-center rounded-full mt-20 ml-12">
+            <CarouselMulti />
           </div>
           <div className="flex w-full items-center rounded-full mt-20">
             <Input
-              className="flex-grow bg-transparent rounded-full -mr-12 border-0 focus-visible:ring-transparent focus-visible:rounded-full bg-gray-200"
+              className="flex-grow bg-transparent rounded-full -mr-10 border-0 focus-visible:ring-transparent focus-visible:rounded-full bg-gray-200"
               placeholder="Search destinations"
               type="text"
             />
-            <button className="bg-red-500 text-white rounded-full p-2"><Search/></button>
+            <button className="bg-red-500 text-white rounded-full p-2">
+              <Search />
+            </button>
           </div>
-        
         </div>
-
-        
       </div>
     </>
   );
