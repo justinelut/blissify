@@ -12,6 +12,11 @@
   },
   "aliases": {
     "components": "@/components",
+    "chat": "@/chat",
+    "blockeditor": "@/blockeditor",
+    "dashboard": "@/dashboard",
+    "payments": "@/payments",
+    "home": "@/home",
     "utils": "@/lib/utils"
   }
 }
