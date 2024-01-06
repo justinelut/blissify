@@ -21,11 +21,11 @@ export default function Header() {
   }, []);
   return (
     <>
-     {isScrolled && (
-          <div className="text-center py-4 px-0 border-b sticky top-0 w-full z-50 bg-white">
+   
+          {/* <div className={`${isScrolled ? 'hidden transition-all duration-300 ease-in-out': 'text-center border-b sticky py-6 top-0 w-full transition-all duration-300 ease-in-out z-50 bg-gray-100 underline' }`}>
             Learn about Guest Favorites, the most loved homes on Airbnb
-          </div>
-        )}
+          </div> */}
+       
       <div
         className={`${
           isScrolled
@@ -38,9 +38,9 @@ export default function Header() {
             <HotelIcon className="text-red-500 h-8 w-8" />
           </div>
 
-          <div className="flex flex-col transition-all duration-300 ease-in-out z-50">
-            {isScrolled && (
-              <div className="flex flex-row items-center space-x-4">
+          <div className="flex flex-col items-center z-50">
+            {!isScrolled && (
+              <div className="flex flex-row items-center space-x-4 transition-all duration-10000 ease-in-out mt-10">
                 <nav className="hidden space-x-4 md:flex">
                   <Link className="text-gray-500 hover:text-gray-700" to="/">
                     Stays
@@ -55,22 +55,7 @@ export default function Header() {
               </div>
             )}
 
-            <div
-              className={`${
-                isScrolled
-                  ? "flex items-center rounded-full"
-                  : "flex items-center rounded-full"
-              }`}
-            >
-              <Input
-                className="flex-grow bg-transparent rounded-full -mr-10 border-0 focus-visible:ring-transparent focus-visible:rounded-full bg-gray-200"
-                placeholder="Search destinations"
-                type="text"
-              />
-              <button className="bg-red-500 text-white rounded-full p-2">
-                <Search />
-              </button>
-            </div>
+            
           </div>
 
           <div className="flex items-center space-x-4">
@@ -87,13 +72,13 @@ export default function Header() {
             </div>
           </div>
         </header>
-        <div>
+        <div className="flex align-middle justify-center transition-all duration-500 ease-in-out">
           <div
             className={`${
               isScrolled
-                ? "flex items-center rounded-full"
-                : "flex items-center rounded-full"
-            }`}
+                ? "transition-all duration-10000 ease-in-out -mt-14 w-1/3"
+                : "transition-all duration-10000 ease-in-out w-2/4 mt-4"
+            } flex items-center rounded-full transition-all duration-5000 ease-in-out`}
           >
             <Input
               className="flex-grow bg-transparent rounded-full -mr-10 border-0 focus-visible:ring-transparent focus-visible:rounded-full bg-gray-200"
@@ -106,7 +91,7 @@ export default function Header() {
           </div>
         </div>
         <div className="flex flex-col md:flex-row lg:flex-row">
-          <div className="flex w-full items-center rounded-full mt-20 ml-12 mr-12">
+          <div className="flex w-full items-center rounded-full ml-12 mr-12">
             <CarouselMulti />
           </div>
         </div>
