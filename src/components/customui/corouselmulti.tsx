@@ -19,7 +19,7 @@ export function CarouselMulti() {
         {Array.from({ length: 14 }).map((_, index) => (
           <CarouselItem
             key={index}
-            className="basis-1/12 md:basis-1/12 lg:basis-1/12  w-full mx-10 items-center"
+            className="basis-1/12 md:basis-1/12 lg:basis-1/12 lg:-mr-8 md:-mr-8  w-full mx-10 items-center"
           >
             <div className="p-1">
               <div>
@@ -27,7 +27,7 @@ export function CarouselMulti() {
                   <span className="text-3xl font-semibold">
                     <LampCeiling />
                   </span>
-                  <h3> Condo</h3>
+                  <p> Condo</p>
                 </div>
               </div>
             </div>
