@@ -1,9 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { AvatarImage, AvatarFallback, Avatar } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
-import { Separator } from "@/components/ui/separator";
 import { CarouselMulti } from "@/components/customui/corouselmulti";
 import { Search } from "lucide-react";
 
@@ -26,9 +24,9 @@ export default function Header() {
       <div
         className={`${
           isScrolled
-            ? "bg-white text-black shadow-lg flex flex-col  justify-between p-4 py-6 px-4 sm:px-4 lg:px-6"
+            ? "bg-white text-black shadow-lg flex flex-col justify-between p-4 py-6 px-4 sm:px-4 md:px-32 lg:px-36"
             : "bg-white text-black flex flex-col  justify-between p-4"
-        } transition-all duration-300 ease-in-out fixed top-0 left-0 right-0 z-50 p-4  py-4 px-6 sm:px-32 lg:px-36`}
+        } transition-all duration-300 ease-in-out fixed top-0 left-0 right-0 z-50 p-4  py-4 px-6 md:px-32 lg:px-36`}
       >
         <header
           className={`${
@@ -52,6 +50,17 @@ export default function Header() {
             </nav>
           </div>
 
+          <div className="flex items-center rounded-full">
+            <Input
+              className="flex-grow bg-transparent rounded-full -mr-10 border-0 focus-visible:ring-transparent focus-visible:rounded-full bg-gray-200"
+              placeholder="Search destinations"
+              type="text"
+            />
+            <button className="bg-red-500 text-white rounded-full p-2">
+              <Search />
+            </button>
+          </div>
+
           <div className="flex items-center space-x-4">
             <Link className="text-gray-500 hover:text-gray-700" to="/">
               Airbnb your home
@@ -71,19 +80,9 @@ export default function Header() {
         </header>
 
 
-        <div className="flex flex-col md:flex-row lg:flex-row justify-between">
-          <div className="flex w-full flex-2 items-center rounded-full mt-20 ml-12">
+        <div className="flex flex-col md:flex-row lg:flex-row">
+          <div className="flex w-full items-center rounded-full mt-20 ml-12">
             <CarouselMulti />
-          </div>
-          <div className="flex w-full items-center rounded-full mt-20">
-            <Input
-              className="flex-grow bg-transparent rounded-full -mr-10 border-0 focus-visible:ring-transparent focus-visible:rounded-full bg-gray-200"
-              placeholder="Search destinations"
-              type="text"
-            />
-            <button className="bg-red-500 text-white rounded-full p-2">
-              <Search />
-            </button>
           </div>
         </div>
       </div>

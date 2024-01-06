@@ -13,13 +13,13 @@ export function CarouselMulti() {
       opts={{
         align: "start",
       }}
-      className="w-full md:max-w-md lg:max-w-lg"
+      className="w-full"
     >
       <CarouselContent>
-        {Array.from({ length: 10 }).map((_, index) => (
+        {Array.from({ length: 14 }).map((_, index) => (
           <CarouselItem
             key={index}
-            className="basis-1/3 md:basis-1/6 lg:basis-1/6"
+            className="basis-1/12 md:basis-1/12 lg:basis-1/12  w-full mx-10 items-center"
           >
             <div className="p-1">
               <div>
