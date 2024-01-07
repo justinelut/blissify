@@ -1,12 +1,8 @@
-// import React from "react";
-// import { createRoot } from "react-dom/client";
-// import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ThemeProvider } from "@/components/darktheme/theme-provider";
 import Dashboard from "@/dashboard/index.tsx";
 import Properties from "@/dashboard/properties/index.tsx";
 import Layout from "@/dashboard/Layout.tsx";
 import "@/globals.css";
-
 
 import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
@@ -23,33 +19,27 @@ import Home from "@/home";
 import HomeLayout from "@/home/homelayout";
 import Payments from "@/payments";
 
-
 const rootRoute = new RootRoute({
   component: () => (
     <>
-       <Outlet />
+      <Outlet />
       <TanStackRouterDevtools />
     </>
   ),
 });
 
-
 //home page routes
-
 
 const homeRoute = new Route({
   getParentRoute: () => rootRoute,
   path: "/",
   component: () => (
     <>
-       <HomeLayout />
+      <HomeLayout>
+        <Home />
+      </HomeLayout>
     </>
   ),
-});
-const homeIndexRoute = new Route({
-  getParentRoute: () => homeRoute,
-  path: "/cv",
-  component: Home,
 });
 
 const authRoute = new Route({
@@ -74,9 +64,15 @@ const dashboardRoute = new Route({
   path: "dashboard",
   component: () => (
     <>
-       <Layout />
+      <Layout />
     </>
   ),
+});
+
+const indexdashboardRoute = new Route({
+  getParentRoute: () => dashboardRoute,
+  path: "/",
+  component: Dashboard,
 });
 
 const propertiesRoute = new Route({
@@ -85,11 +81,11 @@ const propertiesRoute = new Route({
   component: Properties,
 });
 
-
-
-
-const dashboard = dashboardRoute.addChildren([propertiesRoute]) 
-const home = homeRoute.addChildren([authRoute, homeIndexRoute]) 
+const dashboard = dashboardRoute.addChildren([
+  indexdashboardRoute,
+  propertiesRoute,
+]);
+const home = homeRoute.addChildren([authRoute]);
 const routeTree = rootRoute.addChildren([dashboard, home, subscribeRoute]);
 
 const router = new Router({ routeTree });
