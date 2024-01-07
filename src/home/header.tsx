@@ -31,7 +31,7 @@ export default function Header() {
           isScrolled
             ? "bg-white text-black shadow-lg flex flex-col justify-between p-4 py-6 px-4 sm:px-4 md:px-32 lg:px-36"
             : "bg-white text-black flex flex-col  justify-between p-4"
-        } transition-all duration-300 ease-in-out fixed left-0 right-0 z-50 p-4  py-4 px-6 md:px-32 lg:px-36`}
+        } transition-all duration-300 ease-in-out fixed left-0 right-0 z-50 p-4  py-1 px-6 md:px-32 lg:px-36`}
       >
         <header className="flex flex-col lg:flex-row lg:justify-between">
           <div className="flex items-center space-x-4 ">
@@ -81,12 +81,12 @@ export default function Header() {
             } flex items-center rounded-full transition-all duration-5000 ease-in-out`}
           >
             <Input
-              className="flex-grow bg-transparent rounded-full -mr-12 border-0 focus-visible:ring-transparent focus-visible:rounded-full bg-gray-200 p-6"
+              className={`flex-grow bg-transparent rounded-full ${!isScrolled ? '-mr-24' : ' -mr-12'} border-0 focus-visible:ring-transparent focus-visible:rounded-full bg-gray-200 p-6`}
               placeholder="Search destinations"
               type="text"
             />
-            <button className="bg-red-500 text-white rounded-full p-2">
-              <Search />
+            <button className={`bg-red-500 text-white rounded-full p-2 ${!isScrolled && 'px-4'}`}>
+              {isScrolled ? <Search /> : "Search"}
             </button>
           </div>
         </div>
