@@ -81,7 +81,7 @@ export default function Header() {
             } flex items-center rounded-full transition-all duration-5000 ease-in-out`}
           >
             <Input
-              className="flex-grow bg-transparent rounded-full -mr-10 border-0 focus-visible:ring-transparent focus-visible:rounded-full bg-gray-200"
+              className="flex-grow bg-transparent rounded-full -mr-12 border-0 focus-visible:ring-transparent focus-visible:rounded-full bg-gray-200 p-6"
               placeholder="Search destinations"
               type="text"
             />
