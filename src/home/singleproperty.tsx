@@ -4,7 +4,9 @@ export default function SingleProperty() {
   return (
     <div className="mx-6 md:max-w-7xl md:mx-auto py-16">
       <div className="flex flex-row items-center justify-between">
-        <div><h4 className="font-semibold text-2xl">The Mabati Mansion</h4></div>
+        <div>
+          <h4 className="font-semibold text-2xl">The Mabati Mansion</h4>
+        </div>
         <div className="flex gap-4">
           <Share />
           <Heart />
@@ -23,6 +25,56 @@ export default function SingleProperty() {
           <img src="/assets/featured.jpg" />
 
           <img src="/assets/featured.jpg" className="rounded-r-lg" />
+        </div>
+      </div>
+
+      <div className="flex">
+        <div className="flex-grow w-2/3 bg-green-500">
+          <h3>Entire place in Naivasha, Kenya</h3>
+          <h2>2 guests1 bedroom1 bed1 bath</h2>
+          <h3>Entire place in Naivasha, Kenya</h3>
+          <h2>2 guests1 bedroom1 bed1 bath</h2>
+          <h3>Entire place in Naivasha, Kenya</h3>
+          <h2>2 guests1 bedroom1 bed1 bath</h2>
+          <h3>Entire place in Naivasha, Kenya</h3>
+          <h2>2 guests1 bedroom1 bed1 bath</h2>
+          <h3>Entire place in Naivasha, Kenya</h3>
+          <h2>2 guests1 bedroom1 bed1 bath</h2>
+          <h3>Entire place in Naivasha, Kenya</h3>
+          <h2>2 guests1 bedroom1 bed1 bath</h2>
+          <h3>Entire place in Naivasha, Kenya</h3>
+          <h2>2 guests1 bedroom1 bed1 bath</h2>
+          <h3>Entire place in Naivasha, Kenya</h3>
+          <h2>2 guests1 bedroom1 bed1 bath</h2>
+          <h3>Entire place in Naivasha, Kenya</h3>
+          <h2>2 guests1 bedroom1 bed1 bath</h2>
+          <h3>Entire place in Naivasha, Kenya</h3>
+          <h2>2 guests1 bedroom1 bed1 bath</h2>
+          <h3>Entire place in Naivasha, Kenya</h3>
+          <h2>2 guests1 bedroom1 bed1 bath</h2>
+          <h3>Entire place in Naivasha, Kenya</h3>
+          <h2>2 guests1 bedroom1 bed1 bath</h2>
+          <h3>Entire place in Naivasha, Kenya</h3>
+          <h2>2 guests1 bedroom1 bed1 bath</h2>
+          <h3>Entire place in Naivasha, Kenya</h3>
+          <h2>2 guests1 bedroom1 bed1 bath</h2>
+          <h3>Entire place in Naivasha, Kenya</h3>
+          <h2>2 guests1 bedroom1 bed1 bath</h2>
+          <h3>Entire place in Naivasha, Kenya</h3>
+          <h2>2 guests1 bedroom1 bed1 bath</h2>
+          <h3>Entire place in Naivasha, Kenya</h3>
+          <h2>2 guests1 bedroom1 bed1 bath</h2>
+          <h3>Entire place in Naivasha, Kenya</h3>
+          <h2>2 guests1 bedroom1 bed1 bath</h2>
+          <h3>Entire place in Naivasha, Kenya</h3>
+          <h2>2 guests1 bedroom1 bed1 bath</h2>
+          <h3>Entire place in Naivasha, Kenya</h3>
+          <h2>2 guests1 bedroom1 bed1 bath</h2>
+        </div>
+        <div className="flex-grow w-1/3 bg-red-500 relative">
+            <div className="shadow-xl absolute top-0">
+              <h3>Ksh 400</h3>
+            </div>
         </div>
       </div>
     </div>
