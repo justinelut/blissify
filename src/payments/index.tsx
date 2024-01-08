@@ -31,6 +31,8 @@ export default function Subscription() {
     resolver: zodResolver(FormSchema),
   });
 
+  const {reset, clearErrors, watch} = form
+
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
     console.log(data);
