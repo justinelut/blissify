@@ -29,7 +29,7 @@ export default function SingleProperty() {
       </div>
 
       <div className="flex">
-        <div className="flex-grow w-2/3 bg-green-500">
+        <div className="flex-grow w-2/3 bg-green-500 overflow-y-auto">
           <h3>Entire place in Naivasha, Kenya</h3>
           <h2>2 guests1 bedroom1 bed1 bath</h2>
           <h3>Entire place in Naivasha, Kenya</h3>
@@ -71,8 +71,8 @@ export default function SingleProperty() {
           <h3>Entire place in Naivasha, Kenya</h3>
           <h2>2 guests1 bedroom1 bed1 bath</h2>
         </div>
-        <div className="flex-grow w-1/3 bg-red-500 relative">
-            <div className="shadow-xl absolute top-0">
+        <div className="flex-grow w-1/3 bg-red-500 relative max-h-40">
+            <div className="shadow-xl sticky top-0">
               <h3>Ksh 400</h3>
             </div>
         </div>
