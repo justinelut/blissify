@@ -18,6 +18,7 @@ import Signup from "@/dashboard/auth/signup";
 import Home from "@/home";
 import HomeLayout from "@/home/homelayout";
 import Payments from "@/payments";
+import SingleProperty from "@/home/singleproperty";
 
 const rootRoute = new RootRoute({
   component: () => (
@@ -43,9 +44,14 @@ const homeRoute = new Route({
 });
 
 const authRoute = new Route({
-  getParentRoute: () => homeRoute,
-  path: "accounts/auth/signup",
+  getParentRoute: () => rootRoute,
+  path: "/accounts/auth/signup",
   component: Signup,
+});
+const singlePropertyRoute = new Route({
+  getParentRoute: () => rootRoute,
+  path: "/property/id",
+  component: SingleProperty,
 });
 
 const subscribeRoute = new Route({
@@ -85,8 +91,9 @@ const dashboard = dashboardRoute.addChildren([
   indexdashboardRoute,
   propertiesRoute,
 ]);
-const home = homeRoute.addChildren([authRoute]);
-const routeTree = rootRoute.addChildren([dashboard, home, subscribeRoute]);
+
+const home = homeRoute.addChildren([]);
+const routeTree = rootRoute.addChildren([dashboard, home, subscribeRoute, authRoute, singlePropertyRoute]);
 
 const router = new Router({ routeTree });
 
