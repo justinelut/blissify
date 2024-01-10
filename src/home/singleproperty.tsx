@@ -1,8 +1,9 @@
 import { Card } from "@/components/ui/card";
-import { Heart, Share, Sparkles } from "lucide-react";
+import { Heart, Share, Sparkles, Star } from "lucide-react";
 import { CalendarForm } from "@/home/calender";
 import { SelectForm } from "./formselect";
 import { Button } from "@/components/ui/button";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export default function SingleProperty() {
   return (
@@ -37,47 +38,116 @@ export default function SingleProperty() {
         <div className="flex gap-10 items-start">
           <div className="flex-grow w-2/3 overflow-y-auto">
             <h1 className="text-3xl font-bold sticky">
-            Farm stay in Stellenbosch , South Africa
+              Farm stay in Stellenbosch , South Africa
             </h1>
             <h3>Entire place in Naivasha, Kenya</h3>
+            <Card className="flex justify-between py-2 px-6 mt-4 items-center gap-10">
+              <Sparkles size={36} />
+              <h3 className="p-8">
+                One of the most loved homes on blissify, according to guests{" "}
+              </h3>
+              <div className="flex flex-col items-center">
+                <h3 className="text-xl font-bold">5.0</h3>
+                <div className="flex flex-row justify-between">
+                  <Star size={14} />
+                  <Star size={14} />
+                  <Star size={14} />
+                  <Star size={14} />
+                  <Star size={14} />
+                </div>
+              </div>
+              <div className="flex flex-col items-center">
+                <p className="text-xl font-bold">111</p>
+                <div className="flex flex-row justify-between text-xs">
+                  Reviews
+                </div>
+              </div>
+            </Card>
+
+            <Card className="flex justify-start p-6 mt-4 gap-4 items-center border-0 border-b rounded-none">
+              <Avatar>
+                <AvatarImage
+                  src="https://github.com/shadcn.png"
+                  alt="@shadcn"
+                />
+                <AvatarFallback>CN</AvatarFallback>
+              </Avatar>
+              <div className="flex flex-col">
+                <h3 className="font-bold text-md">Hosted by Justine</h3>
+                <p className="text-sm">2 Years renting</p>
+              </div>
+            </Card>
+
+            <div className="flex flex-col">
+            <Card className="flex justify-start p-6 mt-4 gap-4 items-center border-0 border-b rounded-none">
+              <Avatar>
+                <AvatarImage
+                  src="https://github.com/shadcn.png"
+                  alt="@shadcn"
+                />
+                <AvatarFallback>CN</AvatarFallback>
+              </Avatar>
+              <div className="flex flex-col">
+                <h3 className="font-bold text-md">Hosted by Justine</h3>
+                <p className="text-sm">2 Years renting</p>
+              </div>
+            </Card>
+            <Card className="flex justify-start p-6 mt-4 gap-4 items-center border-0 border-b rounded-none">
+              <Avatar>
+                <AvatarImage
+                  src="https://github.com/shadcn.png"
+                  alt="@shadcn"
+                />
+                <AvatarFallback>CN</AvatarFallback>
+              </Avatar>
+              <div className="flex flex-col">
+                <h3 className="font-bold text-md">Hosted by Justine</h3>
+                <p className="text-sm">2 Years renting</p>
+              </div>
+            </Card>
+            <Card className="flex justify-start p-6 mt-4 gap-4 items-center border-0 border-b rounded-none">
+              <Avatar>
+                <AvatarImage
+                  src="https://github.com/shadcn.png"
+                  alt="@shadcn"
+                />
+                <AvatarFallback>CN</AvatarFallback>
+              </Avatar>
+              <div className="flex flex-col">
+                <h3 className="font-bold text-md">Hosted by Justine</h3>
+                <p className="text-sm">2 Years renting</p>
+              </div>
+            </Card>
+            </div>
             <Card className="flex justify-between p-6 mt-4">
-            <Sparkles />
+              <Sparkles />
             </Card>
             <Card className="flex justify-between p-6 mt-4">
-            <Sparkles />
+              <Sparkles />
             </Card>
             <Card className="flex justify-between p-6 mt-4">
-            <Sparkles />
+              <Sparkles />
             </Card>
             <Card className="flex justify-between p-6 mt-4">
-            <Sparkles />
+              <Sparkles />
             </Card>
             <Card className="flex justify-between p-6 mt-4">
-            <Sparkles />
+              <Sparkles />
             </Card>
             <Card className="flex justify-between p-6 mt-4">
-            <Sparkles />
+              <Sparkles />
             </Card>
             <Card className="flex justify-between p-6 mt-4">
-            <Sparkles />
+              <Sparkles />
             </Card>
             <Card className="flex justify-between p-6 mt-4">
-            <Sparkles />
+              <Sparkles />
             </Card>
             <Card className="flex justify-between p-6 mt-4">
-            <Sparkles />
+              <Sparkles />
             </Card>
             <Card className="flex justify-between p-6 mt-4">
-            <Sparkles />
-            </Card>
-            <Card className="flex justify-between p-6 mt-4">
-            <Sparkles />
-            </Card>
-            <Card className="flex justify-between p-6 mt-4">
-            <Sparkles />
-            </Card>
-            <Card className="flex justify-between p-6 mt-4">
-            <Sparkles />
+              <Sparkles />
             </Card>
           </div>
           <Card className="flex-grow-0 w-1/3 flex-shrink grid-cols- sticky top-[14vh] justify-end p-6 shadow-xl">
@@ -87,14 +157,16 @@ export default function SingleProperty() {
 
               <div className="flex flex-col rounded-lg mt-4">
                 <div className="flex w-full justify-between">
-                   <CalendarForm />
-                   <CalendarForm />
+                  <CalendarForm />
+                  <CalendarForm />
                 </div>
                 <div className="w-full">
-                    <SelectForm />
+                  <SelectForm />
                 </div>
 
-                <Button className="bg-green-500 p-4 mt-4 font-bold text-md h-12">Reserve</Button>
+                <Button className="bg-green-500 p-4 mt-4 font-bold text-md h-12">
+                  Reserve
+                </Button>
               </div>
             </div>
           </Card>
