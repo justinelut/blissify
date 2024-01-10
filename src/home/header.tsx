@@ -92,6 +92,24 @@ export default function Header() {
               value={searchvalue}
               onChange={searchProperties}
             />
+            <Input
+              className={`flex-grow bg-transparent rounded-full ${
+                !isScrolled ? "-mr-24" : " -mr-12"
+              } border-0 focus-visible:ring-transparent focus-visible:rounded-full bg-gray-200 p-6`}
+              placeholder="Search destinations"
+              type="text"
+              value={searchvalue}
+              onChange={searchProperties}
+            />
+            <Input
+              className={`flex-grow bg-transparent rounded-full ${
+                !isScrolled ? "-mr-24" : " -mr-12"
+              } border-0 focus-visible:ring-transparent focus-visible:rounded-full bg-gray-200 p-6`}
+              placeholder="Search destinations"
+              type="text"
+              value={searchvalue}
+              onChange={searchProperties}
+            />
             <button
               className={`bg-red-500 text-white rounded-full p-2 ${
                 !isScrolled && "px-4"
