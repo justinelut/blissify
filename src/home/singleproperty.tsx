@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { Heart, Share } from "lucide-react";
+import { Heart, Share, Sparkles } from "lucide-react";
 import { CalendarForm } from "@/home/calender";
 import { SelectForm } from "./formselect";
 import { Button } from "@/components/ui/button";
@@ -36,9 +36,49 @@ export default function SingleProperty() {
 
         <div className="flex gap-10 items-start">
           <div className="flex-grow w-2/3 overflow-y-auto">
-            <h1 className="text-3xl font-bold">Farm stay in Stellenbosch , South Africa</h1>
+            <h1 className="text-3xl font-bold sticky">
+            Farm stay in Stellenbosch , South Africa
+            </h1>
             <h3>Entire place in Naivasha, Kenya</h3>
-          
+            <Card className="flex justify-between p-6 mt-4">
+            <Sparkles />
+            </Card>
+            <Card className="flex justify-between p-6 mt-4">
+            <Sparkles />
+            </Card>
+            <Card className="flex justify-between p-6 mt-4">
+            <Sparkles />
+            </Card>
+            <Card className="flex justify-between p-6 mt-4">
+            <Sparkles />
+            </Card>
+            <Card className="flex justify-between p-6 mt-4">
+            <Sparkles />
+            </Card>
+            <Card className="flex justify-between p-6 mt-4">
+            <Sparkles />
+            </Card>
+            <Card className="flex justify-between p-6 mt-4">
+            <Sparkles />
+            </Card>
+            <Card className="flex justify-between p-6 mt-4">
+            <Sparkles />
+            </Card>
+            <Card className="flex justify-between p-6 mt-4">
+            <Sparkles />
+            </Card>
+            <Card className="flex justify-between p-6 mt-4">
+            <Sparkles />
+            </Card>
+            <Card className="flex justify-between p-6 mt-4">
+            <Sparkles />
+            </Card>
+            <Card className="flex justify-between p-6 mt-4">
+            <Sparkles />
+            </Card>
+            <Card className="flex justify-between p-6 mt-4">
+            <Sparkles />
+            </Card>
           </div>
           <Card className="flex-grow-0 w-1/3 flex-shrink grid-cols- sticky top-[14vh] justify-end p-6 shadow-xl">
             <div className="top-0">
@@ -54,7 +94,7 @@ export default function SingleProperty() {
                     <SelectForm />
                 </div>
 
-                <Button className="bg-green-500 p-4 mt-4">Reserve</Button>
+                <Button className="bg-green-500 p-4 mt-4 font-bold text-md h-12">Reserve</Button>
               </div>
             </div>
           </Card>
