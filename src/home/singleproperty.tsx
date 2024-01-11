@@ -64,7 +64,7 @@ export default function SingleProperty() {
               </div>
             </Card>
 
-            <Card className="flex justify-start p-6 mt-4 gap-4 items-center border-0 border-b rounded-none">
+            <Card className="flex justify-start py-6 pr-6 mt-4 gap-4 items-center border-0 border-b rounded-none">
               <Avatar>
                 <AvatarImage
                   src="https://github.com/shadcn.png"
@@ -79,45 +79,75 @@ export default function SingleProperty() {
             </Card>
 
             <div className="flex flex-col">
-            <Card className="flex justify-start p-6 mt-4 gap-4 items-center border-0 border-b rounded-none">
-              <Avatar>
-                <AvatarImage
-                  src="https://github.com/shadcn.png"
-                  alt="@shadcn"
-                />
-                <AvatarFallback>CN</AvatarFallback>
-              </Avatar>
-              <div className="flex flex-col">
-                <h3 className="font-bold text-md">Hosted by Justine</h3>
-                <p className="text-sm">2 Years renting</p>
+              <Card className="flex justify-start py-6 pr-6 mt-4 gap-4 items-center border-0 border-b rounded-none">
+                <Avatar>
+                  <AvatarImage
+                    src="https://github.com/shadcn.png"
+                    alt="@shadcn"
+                  />
+                  <AvatarFallback>CN</AvatarFallback>
+                </Avatar>
+                <div className="flex flex-col">
+                  <h3 className="font-bold text-md">Hosted by Justine</h3>
+                  <p className="text-sm">2 Years renting</p>
+                </div>
+              </Card>
+              <Card className="flex justify-start py-6 pr-6 mt-4 gap-4 items-center border-0 border-b rounded-none">
+                <Avatar>
+                  <AvatarImage
+                    src="https://github.com/shadcn.png"
+                    alt="@shadcn"
+                  />
+                  <AvatarFallback>CN</AvatarFallback>
+                </Avatar>
+                <div className="flex flex-col">
+                  <h3 className="font-bold text-md">Hosted by Justine</h3>
+                  <p className="text-sm">2 Years renting</p>
+                </div>
+              </Card>
+              <Card className="flex justify-start py-6 pr-6 mt-4 gap-4 items-center border-0 border-b rounded-none">
+                <Avatar>
+                  <AvatarImage
+                    src="https://github.com/shadcn.png"
+                    alt="@shadcn"
+                  />
+                  <AvatarFallback>CN</AvatarFallback>
+                </Avatar>
+                <div className="flex flex-col">
+                  <h3 className="font-bold text-md">Hosted by Justine</h3>
+                  <p className="text-sm">2 Years renting</p>
+                </div>
+              </Card>
+
+              <div className="mt-6">
+                <p>
+                  The space The property is situated on the southern unfenced
+                  borders of Nairobi National Park. We have plenty of wildlife
+                  all year round as well as some resident friends who have found
+                  refuge on the property over the years such as bush baby,
+                  Bo-Jangles, Egyptian goose couple, Gus & Frieda, and buffalo
+                  Billy. The guest loft occupies the second floor of the house
+                  and has a private terrace offering beautiful views of the
+                  garden and park. The en-suite bathroom features a spacious
+                  shower, vanity area, and a beautiful bathtub which is
+                  perfectly placed for our famous 'bathtub game viewing' - a
+                  very unique luxury, only the Kampi offers in the entire
+                  Nairobi National Park area. The second en-suite bedroom is
+                  situated on the ground floor and overlooks the vast gardens.
+                  An office cove on the ground floor provides an ideal space for
+                  work with views of the national park. At the Kampi you have
+                  full access to a generously spaced kitchen with all amenities,
+                  including your own fridge and storage space. Please note that
+                  this listing is based on self-catering. Take-away meals may be
+                  ordered from Osoita Lodge, who make the best Indian cuisine in
+                  town and also offer a wide range of continental menus or City
+                  View (they raise their own pork and goat on the Janini Farm,
+                  just a few kilometres inwards) The Kampi is situated at an
+                  hour from down town Nairobi with untarmacked roads on the last
+                  3 kilometers. If downtown activities and nightlife are at the
+                  top of your list, the Kampi ya Karin is not your first choice.
+                </p>
               </div>
-            </Card>
-            <Card className="flex justify-start p-6 mt-4 gap-4 items-center border-0 border-b rounded-none">
-              <Avatar>
-                <AvatarImage
-                  src="https://github.com/shadcn.png"
-                  alt="@shadcn"
-                />
-                <AvatarFallback>CN</AvatarFallback>
-              </Avatar>
-              <div className="flex flex-col">
-                <h3 className="font-bold text-md">Hosted by Justine</h3>
-                <p className="text-sm">2 Years renting</p>
-              </div>
-            </Card>
-            <Card className="flex justify-start p-6 mt-4 gap-4 items-center border-0 border-b rounded-none">
-              <Avatar>
-                <AvatarImage
-                  src="https://github.com/shadcn.png"
-                  alt="@shadcn"
-                />
-                <AvatarFallback>CN</AvatarFallback>
-              </Avatar>
-              <div className="flex flex-col">
-                <h3 className="font-bold text-md">Hosted by Justine</h3>
-                <p className="text-sm">2 Years renting</p>
-              </div>
-            </Card>
             </div>
             <Card className="flex justify-between p-6 mt-4">
               <Sparkles />
