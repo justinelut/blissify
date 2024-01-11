@@ -34,7 +34,7 @@ export default function Header() {
       <div
         className={`${
           isScrolled
-            ? "bg-white text-black shadow-lg flex flex-col justify-between p-4 py-6 px-4 sm:px-4 md:px-32 lg:px-36"
+            ? "bg-white text-black shadow-lg flex flex-col justify-between p-4 py-4 px-4 sm:px-4 md:px-32 lg:px-36"
             : "bg-white text-black flex flex-col  justify-between p-4"
         } transition-all duration-300 ease-in-out fixed left-0 right-0 z-50 p-4  py-1 px-6 md:px-32 lg:px-36`}
       >
@@ -119,7 +119,7 @@ export default function Header() {
             </button>
           </div>
         </div>
-        <div className="flex flex-col md:flex-row lg:flex-row">
+        <div className="flex flex-col md:flex-row lg:flex-row mt-4 border-t">
           <div className="flex w-full items-center rounded-full ml-12 mr-12">
             <CarouselMulti />
           </div>
