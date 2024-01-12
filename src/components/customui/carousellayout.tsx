@@ -1,8 +1,6 @@
-import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
-  CarouselItem,
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
@@ -14,10 +12,10 @@ interface CarouselProps {
 
 const CarouselLayout: React.FC<CarouselProps> = ({ children }) => {
   return (
-    <Carousel className="w-full max-w-xs">
+    <Carousel className="w-full max-w-lg">
       <CarouselContent>{children}</CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+      <CarouselPrevious className="bg-transparent" />
+      <CarouselNext className="bg-transparent" />
     </Carousel>
   );
 };

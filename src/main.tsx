@@ -1,4 +1,5 @@
 import { ThemeProvider } from "@/components/darktheme/theme-provider";
+import { AnimatePresence } from "framer-motion";
 import Dashboard from "@/dashboard/index.tsx";
 import Properties from "@/dashboard/properties/index.tsx";
 import Layout from "@/dashboard/Layout.tsx";
@@ -60,9 +61,6 @@ const subscribeRoute = new Route({
   component: Payments,
 });
 
-
-
-
 //all routes that are under dashboard
 
 const dashboardRoute = new Route({
@@ -93,7 +91,13 @@ const dashboard = dashboardRoute.addChildren([
 ]);
 
 const home = homeRoute.addChildren([]);
-const routeTree = rootRoute.addChildren([dashboard, home, subscribeRoute, authRoute, singlePropertyRoute]);
+const routeTree = rootRoute.addChildren([
+  dashboard,
+  home,
+  subscribeRoute,
+  authRoute,
+  singlePropertyRoute,
+]);
 
 const router = new Router({ routeTree });
 
@@ -108,9 +112,11 @@ if (!rootElement.innerHTML) {
   const root = ReactDOM.createRoot(rootElement);
   root.render(
     <StrictMode>
-      <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
-        <RouterProvider router={router} />
-      </ThemeProvider>
+      <AnimatePresence initial={false}>
+        <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
+          <RouterProvider router={router} />
+        </ThemeProvider>
+      </AnimatePresence>
     </StrictMode>
   );
 }

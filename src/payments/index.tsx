@@ -34,9 +34,11 @@ export default function Subscription() {
   const {reset, clearErrors, watch} = form
 
 
+
   function onSubmit(data: z.infer<typeof FormSchema>) {
     console.log(data);
   }
+  
 
   return (
     <div className="container mx-auto py-10">

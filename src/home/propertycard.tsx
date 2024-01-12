@@ -1,30 +1,66 @@
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-import { HeartIcon, StarIcon } from "lucide-react"
-
+import { Button } from "@/components/ui/button";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { HeartIcon, StarIcon } from "lucide-react";
 
 interface PropertyProps {
-    image: string,
+  image: string;
 }
 
-export default function PropertyCard({image}:PropertyProps) {
+export default function PropertyCard({ image }: PropertyProps) {
   return (
     <div className="w-full h-full rounded-lg overflow-hidden p-2">
       <div className="relative">
         <div className="carousel">
           <div className="carousel-inner">
             <div className="carousel-item active">
-              <img
-                alt="Guest house"
-                className="w-full h-auto rounded-lg"
-                height="250"
-                src={image}
-                style={{
-                  aspectRatio: "379/250",
-                  objectFit: "cover",
-                }}
-                width="379"
-              />
+              <Carousel className="w-full max-w-lg rounded-lg">
+                <CarouselContent className="rounded-lg">
+                <CarouselItem>
+                  <img
+                    alt="Guest house"
+                    className="w-full h-full rounded-lg"
+                    src={image}
+                    style={{
+                      aspectRatio: "379/250",
+                      objectFit: "cover",
+                    }}
+                    width="379"
+                  />
+                  </CarouselItem>
+                <CarouselItem>
+                  <img
+                    alt="Guest house"
+                    className="w-full h-full rounded-lg"
+                    src={image}
+                    style={{
+                      aspectRatio: "379/250",
+                      objectFit: "cover",
+                    }}
+                    width="379"
+                  />
+                  </CarouselItem>
+                <CarouselItem>
+                  <img
+                    alt="Guest house"
+                    className="w-full h-full rounded-lg"
+                    src={image}
+                    style={{
+                      aspectRatio: "379/250",
+                      objectFit: "cover",
+                    }}
+                    width="379"
+                  />
+                  </CarouselItem>
+                </CarouselContent>
+                <CarouselPrevious className="ml-16 bg-gray-100" />
+                <CarouselNext className="mr-16 bg-gray-100" />
+              </Carousel>
             </div>
           </div>
           <div className="carousel-indicators flex justify-center space-x-2 absolute bottom-4 p-4">
@@ -45,7 +81,9 @@ export default function PropertyCard({image}:PropertyProps) {
           <h3 className="text-lg font-semibold">Nakuru, Kenya</h3>
           <div className="flex items-center">
             <StarIcon className="text-yellow-400" />
-            <span className="text-sm font-semibold text-yellow-600 ml-1">4.81</span>
+            <span className="text-sm font-semibold text-yellow-600 ml-1">
+              4.81
+            </span>
           </div>
         </div>
         <p className="text-sm text-gray-600">Built in the 19th century</p>
@@ -55,7 +93,5 @@ export default function PropertyCard({image}:PropertyProps) {
         </div>
       </div>
     </div>
-  )
+  );
 }
-
-
