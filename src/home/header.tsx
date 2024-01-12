@@ -4,11 +4,11 @@ import { Input } from "@/components/ui/input";
 import React, { useEffect, useState } from "react";
 import { CarouselMulti } from "@/components/customui/corouselmulti";
 import { HotelIcon, MenuIcon, Search } from "lucide-react";
+import { ProfileToggle } from "@/dashboard/sidepanel/ProfileToggle";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [searchvalue, setSearchValue] = useState<string>();
- 
 
   const searchProperties = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
@@ -64,7 +64,7 @@ export default function Header() {
           <div className="flex items-center space-x-4">
             {/* <GlobeIcon className="text-gray-500 h-6 w-6" /> */}
             <div className="flex items-center space-x-1 border p-2 rounded-full">
-              <button>
+              <ProfileToggle />
               <MenuIcon className="text-gray-500 h-3 w-3" />
               <Avatar>
                 <AvatarImage
@@ -73,7 +73,6 @@ export default function Header() {
                 />
                 <AvatarFallback>U</AvatarFallback>
               </Avatar>
-              </button>
             </div>
           </div>
         </header>
