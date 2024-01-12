@@ -17,6 +17,7 @@
     "blockeditor": "@/blockeditor",
     "dashboard": "@/dashboard",
     "payments": "@/payments",
+    "icons": "@/icons",
     "utils": "@/lib/utils"
   }
 }

@@ -15,11 +15,13 @@ import {
   Outlet,
 } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/router-devtools";
-import Signup from "@/dashboard/auth/signup";
+
 import Home from "@/home";
 import HomeLayout from "@/home/homelayout";
 import Payments from "@/payments";
 import SingleProperty from "@/home/singleproperty";
+import Login from "@/auth/login";
+import Signup from "@/auth/signup";
 
 const rootRoute = new RootRoute({
   component: () => (
@@ -44,10 +46,15 @@ const homeRoute = new Route({
   ),
 });
 
-const authRoute = new Route({
+const signupRoute = new Route({
   getParentRoute: () => rootRoute,
   path: "/accounts/auth/signup",
   component: Signup,
+});
+const loginRoute = new Route({
+  getParentRoute: () => rootRoute,
+  path: "/accounts/auth/signin",
+  component: Login,
 });
 const singlePropertyRoute = new Route({
   getParentRoute: () => rootRoute,
@@ -95,7 +102,8 @@ const routeTree = rootRoute.addChildren([
   dashboard,
   home,
   subscribeRoute,
-  authRoute,
+  loginRoute,
+  signupRoute,
   singlePropertyRoute,
 ]);
 
@@ -112,7 +120,7 @@ if (!rootElement.innerHTML) {
   const root = ReactDOM.createRoot(rootElement);
   root.render(
     <StrictMode>
-      <AnimatePresence initial={false}>
+      <AnimatePresence>
         <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
           <RouterProvider router={router} />
         </ThemeProvider>

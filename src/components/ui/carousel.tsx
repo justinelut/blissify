@@ -4,7 +4,7 @@ import useEmblaCarousel, {
   type EmblaOptionsType as CarouselOptions,
   type EmblaPluginType as CarouselPlugin,
 } from "embla-carousel-react"
-import { ArrowLeft, ArrowRight, ChevronLeftCircle, ChevronRightCircle } from "lucide-react"
+import { ChevronLeftCircle, ChevronRightCircle } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"

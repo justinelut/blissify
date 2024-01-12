@@ -6,60 +6,82 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { useAnimate, useInView, usePresence } from "framer-motion";
 import { HeartIcon, StarIcon } from "lucide-react";
+import { useEffect, useState } from "react";
 
 interface PropertyProps {
   image: string;
 }
 
 export default function PropertyCard({ image }: PropertyProps) {
+  const [scope, animate] = useAnimate();
+  const [isHovered, setHovered] = useState(false);
+
+  useEffect(() => {
+    if(isHovered){
+    const enterAnimation = async () => {
+      await animate("#leftright", { opacity: 1, x: 0 }, { duration: 1, ease: "easeInOut" });
+    };
+    enterAnimation();
+  }
+  }, [isHovered]);
   return (
-    <div className="w-full h-full rounded-lg overflow-hidden p-2">
+    <div
+      ref={scope}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className="w-full h-full rounded-lg overflow-hidden p-2"
+    >
       <div className="relative">
         <div className="carousel">
           <div className="carousel-inner">
             <div className="carousel-item active">
               <Carousel className="w-full max-w-lg rounded-lg">
                 <CarouselContent className="rounded-lg">
-                <CarouselItem>
-                  <img
-                    alt="Guest house"
-                    className="w-full h-full rounded-lg"
-                    src={image}
-                    style={{
-                      aspectRatio: "379/250",
-                      objectFit: "cover",
-                    }}
-                    width="379"
-                  />
+                  <CarouselItem>
+                    <img
+                      alt="Guest house"
+                      className="w-full h-full rounded-lg"
+                      src={image}
+                      style={{
+                        aspectRatio: "240/250",
+                        objectFit: "cover",
+                      }}
+                    />
                   </CarouselItem>
-                <CarouselItem>
-                  <img
-                    alt="Guest house"
-                    className="w-full h-full rounded-lg"
-                    src={image}
-                    style={{
-                      aspectRatio: "379/250",
-                      objectFit: "cover",
-                    }}
-                    width="379"
-                  />
+                  <CarouselItem>
+                    <img
+                      alt="Guest house"
+                      className="w-full h-full rounded-lg"
+                      src={image}
+                      style={{
+                        aspectRatio: "240/250",
+                        objectFit: "cover",
+                      }}
+                    />
                   </CarouselItem>
-                <CarouselItem>
-                  <img
-                    alt="Guest house"
-                    className="w-full h-full rounded-lg"
-                    src={image}
-                    style={{
-                      aspectRatio: "379/250",
-                      objectFit: "cover",
-                    }}
-                    width="379"
-                  />
+                  <CarouselItem>
+                    <img
+                      alt="Guest house"
+                      className="w-full h-full rounded-lg"
+                      src={image}
+                      style={{
+                        aspectRatio: "240/250",
+                        objectFit: "cover",
+                      }}
+                    />
                   </CarouselItem>
                 </CarouselContent>
-                <CarouselPrevious className="ml-16 bg-gray-100" />
-                <CarouselNext className="mr-16 bg-gray-100" />
+                {isHovered ? (
+                  <div id="leftright">
+                    {" "}
+                    <CarouselPrevious className="ml-16 bg-gray-100" />
+                    <CarouselNext className="mr-16 bg-gray-100" />
+                  </div>
+                ) : (
+                  ""
+                )}
               </Carousel>
             </div>
           </div>
