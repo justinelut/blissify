@@ -1,14 +1,14 @@
 import { Link } from "@tanstack/react-router";
 import { AvatarImage, AvatarFallback, Avatar } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CarouselMulti } from "@/components/customui/corouselmulti";
 import { HotelIcon, MenuIcon, Search } from "lucide-react";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [searchvalue, setSearchValue] = useState<string>();
-  const propertiesDiv = useRef<HTMLDivElement>(null);
+ 
 
   const searchProperties = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
@@ -64,6 +64,7 @@ export default function Header() {
           <div className="flex items-center space-x-4">
             {/* <GlobeIcon className="text-gray-500 h-6 w-6" /> */}
             <div className="flex items-center space-x-1 border p-2 rounded-full">
+              <button>
               <MenuIcon className="text-gray-500 h-3 w-3" />
               <Avatar>
                 <AvatarImage
@@ -72,6 +73,7 @@ export default function Header() {
                 />
                 <AvatarFallback>U</AvatarFallback>
               </Avatar>
+              </button>
             </div>
           </div>
         </header>

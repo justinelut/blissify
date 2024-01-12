@@ -20,8 +20,8 @@ import Home from "@/home";
 import HomeLayout from "@/home/homelayout";
 import Payments from "@/payments";
 import SingleProperty from "@/home/singleproperty";
-import Login from "@/auth/login";
-import Signup from "@/auth/signup";
+import Login from "@/dashboard/auth/login";
+import Signup from "@/dashboard/auth/signup";
 
 const rootRoute = new RootRoute({
   component: () => (

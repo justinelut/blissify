@@ -1,4 +1,4 @@
-import Login from "@/auth/login";
+import Login from "@/dashboard/auth/login";
 
 export default function AuthForm() {
   return <Login />
